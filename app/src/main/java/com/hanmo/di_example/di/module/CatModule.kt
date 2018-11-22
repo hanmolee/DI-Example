@@ -11,4 +11,5 @@ object CatModule {
     fun provideCat() : Cat {
         return Cat()
     }
+
 }
