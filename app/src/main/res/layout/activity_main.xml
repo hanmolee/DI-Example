@@ -6,13 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/catNameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="get Cat Name"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/catNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/catNameButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/catNameButton"
+        app:layout_constraintTop_toTopOf="@+id/catNameButton" />
+
+
+    <Button
+        android:id="@+id/dogNameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="40dp"
+        android:text="get Dog Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/catNameButton" />
+
+    <TextView
+        android:id="@+id/dogNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/dogNameButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dogNameButton"
+        app:layout_constraintTop_toTopOf="@+id/dogNameButton" />
 
 </android.support.constraint.ConstraintLayout>

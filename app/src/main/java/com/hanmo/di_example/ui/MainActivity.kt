@@ -8,6 +8,7 @@ import com.hanmo.di_example.R
 import com.hanmo.di_example.di.component.DaggerPetComponent
 import com.hanmo.di_example.di.module.CatModule
 import com.hanmo.di_example.di.module.DogModule
+import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -22,14 +23,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initComponent()
+        injectComponent()
+
+        setGetCatNameButton()
+        setGetDogNameButton()
     }
 
-    private fun initComponent() {
+    private fun injectComponent() {
         DaggerPetComponent.builder()
                 .catModule(CatModule)
                 .dogModule(DogModule)
                 .build()
                 .inject(this)
     }
+
+    private fun setGetCatNameButton() {
+        catNameButton.setOnClickListener {
+            catNameText.text = cat.getCatName()
+        }
+    }
+    private fun setGetDogNameButton() {
+        dogNameButton.setOnClickListener {
+            dogNameText.text = dog.getDogName()
+        }
+    }
+
+
 }
